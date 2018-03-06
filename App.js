@@ -1,17 +1,48 @@
-import React from 'react'
-import { StyleSheet, Text, View } from 'react-native'
-import { Square } from './Components'
+import React, { Component } from 'react'
+import { StyleSheet, Text, View, Button } from 'react-native'
+import { StackNavigator } from 'react-navigation'
+import { Board } from './Components'
 
-export default class App extends React.Component {
+
+class Menu extends Component {
   render() {
-    return (
-      <View style={styles.container}>
+    return(
+      <View style={ styles.container }>
         <Text>NURIKABE</Text>
-        <Square />
+        <Button
+          title='play'
+          onPress={() => this.props.navigation.navigate('Game')}
+        />
       </View>
     )
   }
 }
+
+class Game extends Component {
+  render() {
+    return(
+      <Board />
+    )
+  }
+}
+
+const RootStack = StackNavigator({
+  Menu: {
+    screen: Menu
+  },
+  Game: {
+    screen: Game
+  }
+}, {
+  initialRouteName: 'Menu'
+})
+
+export default class App extends Component {
+  render() {
+    return <RootStack />
+  }
+}
+
 
 const styles = StyleSheet.create({
   container: {

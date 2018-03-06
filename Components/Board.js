@@ -1,12 +1,14 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 import { Square } from '../Components'
 
-export default class Board extends React.Component {
+export default class Board extends Component {
   render() {
     return (
       <View style={styles.container}>
-
+        {
+          <Square />
+        }
       </View>
     )
   }

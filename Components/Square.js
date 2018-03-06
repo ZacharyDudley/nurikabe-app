@@ -35,11 +35,11 @@ export default class Square extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    // flex: 1,
-    // alignItems: 'center',
-    // justifyContent: 'center',
-    // width: 50,
-    // height: 50,
+    flex: 0,
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: 50,
+    height: 50,
     // padding: 10,
     // margin: 10,
     backgroundColor: '#555555'
@@ -65,6 +65,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#ffffff'
   },
   text: {
-
+    fontSize: 50,
+    fontWeight: 'bold',
   }
 })
