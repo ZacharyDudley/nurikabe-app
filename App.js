@@ -11,7 +11,11 @@ class Menu extends Component {
         <Text>NURIKABE</Text>
         <Button
           title='play'
-          onPress={() => this.props.navigation.navigate('Game')}
+          onPress={() => {
+            this.props.navigation.navigate('Game', {
+              sizeH: 10,
+              sizeW: 10
+            })}}
         />
       </View>
     )
@@ -20,8 +24,14 @@ class Menu extends Component {
 
 class Game extends Component {
   render() {
+    const { params } = this.props.navigation.state
+    const sizeH = params ? params.sizeH : null
+    const sizeW = params ? params.sizeW : null
+
     return(
-      <Board />
+      <View style={ styles.container }>
+        <Board size={sizeW, sizeH} />
+      </View>
     )
   }
 }

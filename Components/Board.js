@@ -3,12 +3,18 @@ import { StyleSheet, Text, View } from 'react-native'
 import { Square } from '../Components'
 
 export default class Board extends Component {
+  // constructor(props) {
+  //   super(props)
+  // }
+
   render() {
+    // const { sizeW, sizeH } = this.props.size
+
     return (
       <View style={styles.container}>
-        {
-          <Square />
-        }
+      {
+        this.props.size && <Square />
+      }
       </View>
     )
   }
